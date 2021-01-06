@@ -20,7 +20,7 @@ rt.last_name,
 rt.title
 INTO unique_titles
 FROM retirement_titles rt
-ORDER BY rt.emp_no, to_date DESC;
+ORDER BY rt.emp_no, rt.to_date DESC;
 ------------------------------------------------------------------
 SELECT 
 COUNT(emp_no),
