@@ -12,7 +12,7 @@ address the following questions in our analysis:
 2) How many job titles need to be filled?
 
 ---
-## Summary: Analysis/Results
+## Summary: Results/Analysis
 
 In the assignment, we we're tasked to query the tables to (1) determine 
 the number of retiring employees per title and (2) identify employees
@@ -28,7 +28,7 @@ Next, we created the SQL database according to our outline and imported
 different joins with the 6 tables, we were able to create new tables and query using different
 SQL statements to answer our analysis questions. 
 
-Creating the following ERD, it reflects the different table relationships.
+Creating the following ERD, it reflects the different table relationships:
 ![](EmployeeDB.png)
 
 1. In Deliverable 1, the first query was to pull the titles of employees
@@ -86,8 +86,9 @@ the employees eligible to participate in the mentor program.
 
 
 Additional code was written to get the number of eligible mentors by title.<br>
-><img src="https://github.com/yorojanine/Pewlett-Hackard-Analysis/blob/main/PNGs/additionalcode1.PNG" height="200" width="345">
-![](PNGs/add_code_table1.PNG)
+><img src="https://github.com/yorojanine/Pewlett-Hackard-Analysis/blob/main/PNGs/additionalcode1.PNG" height="200" width="300">
+><img src="https://github.com/yorojanine/Pewlett-Hackard-Analysis/blob/main/PNGs/mentorship_eligibility_count.PNG" height="225" width="300">
+
 
 In total, there were 1,549 eligible mentors. Using this query: `SELECT COUNT(*) FROM mentorship_eligibility;`
 it confirms the total of employees qualified to be a mentor.
@@ -124,13 +125,13 @@ Referencing the ERD, I pull in the "dept_no" from the **dept_emp** table by usin
 `INNER JOIN` on "emp_no". Next, I can use the "dept_no" from the **dept_emp** table
 to get the dept_name. So the next step in the query uses `INNER JOIN` on "dept_no".
 
-In addition, I noticed that some employees were part of more than one department,
+* In addition, I noticed that some employees were part of more than one department,
 so again, I used the `DISTINCT ON` function to only get one record. Notice I used
 `INTO TEMP TABLE` because I didn't want to create these tables for the database.
 Rather by using temp, it gives me the flexibility to query without having it stored
 in my database, saving memory for my DB.
 
-Finally, I use the `COUNT` function to see how many eligible mentors
+* Finally, I use the `COUNT` function to see how many eligible mentors
 exists in each department. Here we see there should be enough employees
 in each department to serve as a mentor.
 
